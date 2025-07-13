@@ -1,92 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Swayzy - Decentralized Influencer Platform</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Swayzy – Decentralized influencer marketing platform built on Web3." />
+  <meta property="og:title" content="Swayzy – The Web3 Influencer Hub" />
+  <meta property="og:description" content="Transparent, scalable, and rewarding Web3-based influencer marketing." />
+  <meta property="og:image" content="photo_2025-07-13_15-46-56-removebg-preview.png" />
+  <link rel="icon" type="image/png" href="photo_2025-07-13_15-46-56-removebg-preview.png" />
+  <title>Swayzy – Web3 Influencer Platform</title>
   <style>
     :root {
-      --main-purple: #a259ff;
-      --dark-purple: #6a00f4;
-      --light-purple: #f3e8ff;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background-color: var(--light-purple);
-      color: #111;
-      line-height: 1.6;
-      padding: 0 1.5rem;
-    }
-    header {
-      padding: 2rem 0;
-      text-align: center;
-      background-color: var(--main-purple);
-      color: white;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    .section {
-      max-width: 960px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-    .section h2 {
-      font-size: 1.8rem;
-      color: var(--dark-purple);
-      margin-bottom: 1rem;
-    }
-    strong {
-      color: var(--main-purple);
-      font-weight: 600;
-    }
-    header h1:hover {
-        color: var(--light-purple);
-    }
-    ul {
-      margin-top: 1rem;
-      padding-left: 1.2rem;
-    }
-    ul li {
-      margin-bottom: 0.5rem;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #666;
+      --primary: #f5c93a;
+      --secondary: #5a1eae;
+      --background: #fffefc;
+      --text: #1a1a1a;
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      .section {
-        padding: 1.5rem;
-      }
-      .section h2 {
-        font-size: 1.5rem;
-      }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      body {
-        padding: 0 1rem;
-      }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
-    .section:hover {
+
+    header {
+      background-color: var(--secondary);
+      padding: 3rem 1rem 5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      width: 100px;
+      margin-bottom: 1rem;
+      align-self: self-start;
+      background-color: var(--secondary);
+    }
+
+    header h1 {
+      color: var(--primary);
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+
+    .hex-container {
+      position: relative;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .hex {
+      width: 30px;
+      height: 30px;
+      background-color: var(--primary);
+      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hex:nth-child(1) { top: 10%; left: 10%; }
+    .hex:nth-child(2) { top: 20%; right: 15%; }
+    .hex:nth-child(3) { bottom: 15%; left: 20%; }
+    .hex:nth-child(4) { bottom: 10%; right: 10%; }
+
+
+    section:hover {
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s ease;
     }
@@ -95,71 +88,126 @@
       transition: box-shadow 0.3s ease;
       text-decoration: underline;
     }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    main {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      padding: 2rem;
+      background: #ffffffcc;
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: var(--secondary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+  <div class="hex-container">
+    <!-- Generate 30 hexagons with random positions -->
+    <script>
+      for (let i = 0; i < 45; i++) {
+        const hex = document.createElement('div');
+        hex.className = 'hex';
+        hex.style.top = `${Math.random() * 100}%`;
+        hex.style.left = `${Math.random() * 100}%`;
+        hex.style.animationDelay = `${Math.random() * 6}s`;
+        document.currentScript.parentElement.appendChild(hex);
+      }
+    </script>
   <header>
-    <h1>Welcome to Your Influencer Adventure with Swayzy</h1>
+    <h1 style="font-size: 300%;">Swayzy – The Web3 Influencer Hub</h1>
+    <div class="hex-container">
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+      <div class="hex"></div>
+    </div>
   </header>
 
-  <section class="section">
-    <h2>The Problem</h2>
-    <p>43% of creators struggle to monetize their content effectively. Meanwhile, 50% of brands can’t clearly track ROI from influencer campaigns. This disconnect is massive — and that’s exactly the gap <strong>Swayzy</strong> is here to fix.</p>
-  </section>
+  <main>
+    <section>
+      <h2>Why Swayzy?</h2>
+      <p>43% of creators struggle to monetize content. 50% of brands can’t track ROI. Swayzy bridges that gap through a Web3-based solution for influencer marketing that’s transparent, scalable, and rewarding.</p>
+    </section>
 
-  <section class="section">
-    <h2>Our Solution</h2>
-    <p>Swayzy is a <strong>Web3-based platform</strong> that connects influencers and brands through transparent, scalable, and efficient collaboration.</p>
-    <p>Unlike traditional platforms that are centralized or exclusive, Swayzy supports micro-influencers and small businesses through fair, fast, and accessible campaign tools.</p>
-  </section>
+    <section>
+      <h2>How It Works</h2>
+      <p>Brands post campaign offers. Micro-influencers respond. Every successful post is rewarded in SOL-equivalent crypto — instantly and without middlemen.</p>
+    </section>
 
-  <section class="section">
-    <h2>How It Works</h2>
-    <p>We’re building a <strong>Dart/Flutter app</strong> where brands can:</p>
-    <ul>
-      <li>Create campaign requests for specific products</li>
-      <li>Set clear influencer criteria</li>
-      <li>Pay in <strong>Cedra</strong> for each successful collaboration</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Why Web3 & Solana?</h2>
+      <p>Fast, low-fee, and ideal for instant micropayments. Creators keep full control. Gen Z prefers freedom — and Swayzy delivers that, powered by Solana.</p>
+    </section>
 
-  <section class="section">
-    <h2>Why Now?</h2>
-    <ul>
-      <li>Web3 makes it easy for creators to get started.</li>
-      <li>Cedra is fast, cheap, and perfect for small rewards.</li>
-      <li>Gen Z & Gen Alpha prefer freedom and transparency.</li>
-      <li>The creator economy is booming with demand for new income models.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Our Mission</h2>
+      <p>We’re Ukrainian engineering students and creators. We’ve lived this problem. Swayzy is not just a project — it’s our mission to make influencer marketing fair and decentralized.</p>
+    </section>
 
-  <section class="section">
-    <h2>Why Us?</h2>
-    <p>We’re a team of Ukrainian software engineering students with real technical skills and a shared passion. One of us is a former content creator — we’ve experienced the struggle ourselves.</p>
-  </section>
+    <section>
+      <h2>Next Steps</h2>
+      <ul>
+        <li>💡 MVP development continues</li>
+        <li>🚀 Testnet release with early adopters</li>
+        <li>🔁 Feedback loop and iteration</li>
+      </ul>
+    </section>
 
-  <section class="section">
-    <h2>Our Roadmap</h2>
-    <ul>
-      <li>💡 Continue refining the platform</li>
-      <li>🚀 Launch a test version for early adopters</li>
-      <li>🔁 Collect feedback and iterate fast</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>The Vision</h2>
-    <p>Swayzy isn’t just another influencer tool. It’s a step toward a decentralized, fairer future for creators and companies alike.</p>
-  </section>
-
-  <section class="section">
+    <section class="section">
     <h2>Contacts</h2>
     <strong><a href="https://x.com/SwayzyDev">X (Twitter)</a><br></strong>
     <strong><a href="https://www.instagram.com/swayzyapp?igsh=MWxzOXBxanB1cXl2cQ==">Instagram</a></strong>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Swayzy — Built with passion for a decentralized creator economy.</p>
+    <p style="color: var(--secondary)">Made with ❤️ by Swayzy Team – 2025</p>
   </footer>
 </body>
+
 </html>
